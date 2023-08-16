@@ -182,6 +182,9 @@ Here are the features of Dovecot explained in simple terms:
 6.  Sieve Filtering: It supports Sieve, a scripting language that allows
     > users to create mail filters and automatically sort or discard
     > incoming messages based on specific criteria.
+    >
+     
+![Screenshot from 2023-08-07 14-43-57](https://github.com/Manojrajbhar1/keenable/assets/124480409/4bffc422-a42c-4e02-8e75-5af5c08ff10b)
 
 7.  Quota Support: Dovecot can enforce mailbox quotas, limiting the
     > amount of storage space each user can consume to avoid excessive
