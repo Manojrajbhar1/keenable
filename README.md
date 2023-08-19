@@ -1,65 +1,18 @@
-# LDAP
+# OpenShift Install
 
-Requirement
+The OpenShift installer `openshift-install` makes it easy to get a cluster
+running on the public cloud or your local infrastructure.
 
-1. Install and configure Ldap 389 DS in the containerised platform with persistence storage
+To learn more about installing OpenShift, visit [docs.openshift.com](https://docs.openshift.com)
+and select the version of OpenShift you are using.
 
-2. Create organisation [keenable.in](http://keenable.in/)
+## Installing the tools
 
-3. Create OU [Dev,Support,POC, Document, Observability]
+After extracting this archive, you can move the `openshift-install` binary
+to a location on your PATH such as `/usr/local/bin`, or keep it in a temporary
+directory and reference it via `./openshift-install`.
 
-4. Create group Admin,Support
+## License
 
-5. Create custom attribute
-
-Environment Info
-
-**Server Info:-**
-
-Os version
-
-NAME="Ubuntu"
-
-VERSION="20.04.6 LTS (Focal Fossa)"
-
-podman version 3.4.2
-
-**Client Info:-**
-
-NAME="Ubuntu"
-
-VERSION="20.04.6 LTS (Focal Fossa)"
-
-Ldap version:- 3
-
-Apache Directory Studio version:- 2.0.0.v20210717-M17
-
-**List of Tools:-**
-
-1. Podman
-2. Ldap
-3. Apache Directory Studio
-
-**LDAP**:- The Lightweight Directory Access Protocol is a communication protocol used to access directory servers and is used to store, update and retrieve data from a directory structure.
-
-**Command for the setup or configuration**
-
-1. Create Bash script for create Pod and container
-
-cat  ldap.sh
-
-Bash script :-
-
-```bash
-#!/bin/bash
-#create pod with name ldap389
-podman pod create --name ldap389 --publish 3389:3389 --publish 3636:3636
-#create container
-podman run -dt\
---pod ldap389 \
---name 389ds-ldap \
--v ~/389ds/data:/data \
--e DS_SUFFIX=dc=keenable, dc=in \
--e DS_DM_PASSWORD=<password> \
-docker.io/389ds/dirsrv
-```
+OpenShift is licensed under the Apache Public License 2.0. The source code for this
+program is [located on github](https://github.com/openshift/installer).
